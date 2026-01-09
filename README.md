@@ -1,2 +1,2 @@
 # MTech-Research
-working on RTOS with Dr. Nioraj Kumar(IIT Goa)
+working on RTOS with Dr. Niraj Kumar(IIT Goa)
