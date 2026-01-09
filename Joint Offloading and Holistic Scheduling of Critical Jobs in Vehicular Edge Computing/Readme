@@ -1,0 +1,68 @@
+Joint Offloading and Holistic Scheduling in Vehicular Edge Computing
+
+This repository contains the implementation and experimental evaluation of an exact MILP-based scheduler and a polynomial-time OPA-based schedulability analysis for real-time job offloading in Vehicular Edge Computing (VEC) systems.
+
+The work models a two-stage execution pipeline—RSU upload → MEC execution—with strict non-overlapping resource constraints and firm end-to-end deadlines. It was developed as part of an M.Tech dissertation at IIT Goa.
+
+📌 Problem Overview
+
+In Vehicular Edge Computing, vehicles offload computation-intensive jobs to nearby Road-Side Units (RSUs) and Mobile Edge Computing (MEC) servers.
+Each job must:
+
+Upload data via an RSU (exclusive access)
+
+Execute on a MEC server (exclusive access)
+
+Complete both stages before its deadline
+
+The core challenge is to determine feasible schedules that respect:
+
+Resource conflicts
+
+Stage dependencies
+
+End-to-end deadlines
+
+Execution mode choices (offloading vs local execution)
+
+🧠 Contributions
+
+This repository implements two complementary approaches:
+
+1️⃣ MILP-Based Exact Scheduling
+
+Jointly decides:
+
+RSU selection
+
+MEC server assignment
+
+Local vs offloaded execution
+
+Start/end times for all stages
+
+Enforces non-overlap via activated Big-M constraints
+
+Optimizes a weighted objective combining:
+
+End-to-end delay
+
+MEC execution cost
+
+Produces optimal schedules when feasible
+
+2️⃣ OPA-Based Schedulability Analysis
+
+Assumes a fixed two-stage RSU–MEC pipeline
+
+Derives OPA-compatible response-time bounds for:
+
+Preemptive scheduling
+
+Non-preemptive scheduling
+
+Enables polynomial-time schedulability testing (O(n²))
+
+Provides a scalable alternative to MILP
+
+Together, these methods expose the optimality vs scalability trade-off in RSU–MEC scheduling.
